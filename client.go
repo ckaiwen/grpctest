@@ -15,7 +15,7 @@ func main() {
 	}
 
 	prodClient:=services.NewProdServiceClient(conn)
-	prodRes,err:=prodClient.GetProdStock(context.Background(),&services.ProdRequest{ProdId: 12})
+	prodRes,err:=prodClient.GetProdStock(context.Background(),&services.ProdRequest{ProdId: 15})
 	if err!=nil{
 		log.Fatal(err)
 	}
