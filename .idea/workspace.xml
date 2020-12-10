@@ -19,33 +19,28 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ba36e9f-a9b9-42ab-b3a9-0f3200ac342f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client_cert/ca.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_cert/client.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_cert/client.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/ca.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/ca.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/ca.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/client.csr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/client.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/client.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/server.csr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/server.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keys/server.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_cert/ca.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_cert/server.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_cert/server.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpserver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/api/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/api/http.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/api/httpbody.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/rpc/code.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/rpc/error_details.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proto/google/rpc/status.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/grpctest.pb.gw.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/grpctest.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/grpctest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/grpctest.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/grpctest.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="Go Application" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -68,6 +63,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectId" id="1lJO3omZpcQbzVvNbRY1arX5jAi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -79,17 +75,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultGoTemplateProperty" value="Go Application" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jjrobotcn/power" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/proto" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/proto" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$/proto" />
@@ -104,7 +103,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

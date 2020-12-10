@@ -1,4 +1,6 @@
-grpc文件生成：protoc --go-grpc_out=. ./proto/grpctest.proto  
+grpc文件生成：protoc --go_out=plugins=grpc:../services grpctest.proto 
+gateway文件生成：protoc --grpc-gateway_out=logtostderr=true:../services grpctest.proto 
+
 
 自签证书  
 服务端
